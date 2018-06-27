@@ -26,11 +26,11 @@ if token:
     previousSong = '' # How I will handle updating slack name
     while True:
         results = sp._get('me/player/currently-playing', sp._auth_headers())
-        currentSong = 'Playing ' + results['item']['name'] + ' by ' + results['item']['artists'][0]['name']
+        currentSong = 'Listening to - ' + results['item']['name'] + ' by ' + results['item']['artists'][0]['name']
         if previousSong != currentSong:
             previousSong = currentSong
             print(currentSong)
         time.sleep(5)
-        
+
 else:
     print ("Can't get token for", username)
