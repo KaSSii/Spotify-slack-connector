@@ -31,5 +31,6 @@ if token:
             previousSong = currentSong
             print(currentSong)
         time.sleep(5)
+        
 else:
     print ("Can't get token for", username)
