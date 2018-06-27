@@ -7,16 +7,10 @@ import time
 spotify_files = open('./info.json', 'r')
 spotify_json = spotify_files.read()
 spotify_info = json.loads(spotify_json)
-username = '1245285009'
-
-print('Loading...')
-
-scope = 'user-read-currently-playing'
 
 print('Getting Auth Token...')
-
 token = util.prompt_for_user_token(
-    username,
+    spotify_info['username'],
     'user-read-currently-playing',
     client_id=spotify_info['client_id'],
     client_secret=spotify_info['secret_id'],
